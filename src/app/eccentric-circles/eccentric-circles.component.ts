@@ -20,7 +20,7 @@ export class EccentricCirclesComponent implements OnInit, OnChanges{
   @Input() maxWidth: number = 700;
   @Input() minWidth: number = 500;
   @Input() maxHeight: number = 0;
-  @Input() lineWidth: number = 40;
+  @Input() lineWidth: number = 25;
   @Input() leftColor: string = "None";
   @Input() rightColor: string = "None";
   @Input() leftOpacity: number = 1.0;
@@ -51,7 +51,7 @@ export class EccentricCirclesComponent implements OnInit, OnChanges{
         "color" : "none",
         "xcoord" : 525,
         "ycoord" : 300,
-        "linewidth" : 40,
+        "linewidth" : 25,
         "innertext" : "Clear",
         "opacity" : "1",
         "fontsize" : "25",
@@ -65,7 +65,7 @@ export class EccentricCirclesComponent implements OnInit, OnChanges{
         "color" : "none",
         "xcoord" : 1075,
         "ycoord" : 300,
-        "linewidth" : 40,
+        "linewidth" : 25,
         "innertext" : "Clear",
         "opacity" : "1",
         "fontsize" : "25",
