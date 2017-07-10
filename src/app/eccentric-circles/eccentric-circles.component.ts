@@ -26,10 +26,10 @@ export class EccentricCirclesComponent implements OnInit, OnChanges{
   @Input() leftOpacity: number = 1.0;
   @Input() rightOpacity: number = 1.0;
   @Input() leftText: string = "Clear";
-  @Input() leftFontSize: number = 30;
+  @Input() leftFontSize: number = 25;
   @Input() leftTransparencyTime: Number = 1000;
   @Input() rightText: string = "Clear";
-  @Input() rightFontSize: Number = 30;
+  @Input() rightFontSize: Number = 25;
   @Input() rightTransparencyTime: Number = 1000;
   trans: number = 1;
   transparency: number = 0;
