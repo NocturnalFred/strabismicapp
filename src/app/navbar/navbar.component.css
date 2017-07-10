@@ -1,0 +1,45 @@
+.nav-item {
+  float:left;
+  background-color: None;
+
+}
+.navbar-brand {
+  background-color: darkred;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  padding-bottom: 0px;
+}
+
+.nav-link {
+  margin-top:10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: lightgrey;
+  border-style: solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-color: black;
+
+}
+
+.eye-buffer {
+  padding-top: 60px;
+
+}
+
+/* the-back exists as a default background color for all of my views
+    I can not figure out how to get :host /deep/ or some variation of that to work
+    If anyone knows how to set the background color for the *entire* page across all views
+    please email fred.rodd@gmail.com with the appropriate info.  I will owe you a donut.
+*/
+.the-back  {
+  background-color: #ffeeff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -100;
+}

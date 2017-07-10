@@ -1,0 +1,80 @@
+.clicker {
+  float:right;
+  padding:5px;
+  margin-left: 2px;
+  margin-right: 8px;
+  margin-top: 2px;
+  color: blue;
+  background-color: lightblue;
+  border-style: solid;
+  border-color: darkblue;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.clicker:hover {
+  cursor: help;
+}
+.info {
+position:absolute;
+color:black;
+display:none;
+height:auto;
+width:200px;
+opacity: .9;
+margin-left: 10px;
+padding: 1%;
+z-index: 20;
+border-radius: 5px;
+background-color: lightblue;
+border-style: solid;
+border-color: darkblue;
+border-width: 1px;
+}
+.clicker:focus > .info{
+  display:block;
+}
+.viewtoggle {
+  color: blue;
+  float: left;
+  width: 33%;
+  cursor: pointer;
+}
+.instructions {
+  width: 80%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+
+
+.eccentric-circles-config {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.input-title {
+  width: 500px;
+}
+
+.binary-options {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 5px;
+
+}
+
+.binary {
+  float: left;
+}
+
+.input-config {
+
+}
+
+.text-config {
+  padding-left: 15%;
+  padding-right: 15%;
+}

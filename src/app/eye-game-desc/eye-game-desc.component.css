@@ -1,0 +1,18 @@
+.eye-game-desc {
+  padding-bottom: 10px;
+  margin: auto;
+  width: 60%;
+  font-size: 24;
+}
+
+.list-title {
+   background-color: lightblue;
+   width:auto;
+   padding: 10px,10px,10px,10px;
+}
+
+.list-description {
+  margin: auto;
+  width: 50%;
+  font-size: 18;
+}

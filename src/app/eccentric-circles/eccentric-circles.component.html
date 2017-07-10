@@ -1,0 +1,171 @@
+
+<div>
+<div class="instructions" >
+  <div class="viewtoggle" (click)="toggleInstructions1()">Toggle Info</div>
+  <div class="viewtoggle" (click)="toggleConfigDisplay()">Toggle Config</div>
+  <!--<div class="viewtoggle" (click)="toggleJSONConfigDisplay()">Toggle JSON Config</div> -->
+  <br/> <br/>
+</div>
+
+<div class="instructions" *ngIf=instructions1>
+  <p>You may toggle views by clicking the toggle text above<br/>
+  <p>There is no score in this game.  The goal is to cross your eyes inward or uncross them outward
+    such that the circles overlap and "fuse." An explanation can be found here: <a href="https://www.youtube.com/watch?v=aVamg6E3ajY"> Eccentric Circles </a>
+  </p>
+</div>
+
+<div class="binary-options" >
+  <div>
+  <div class="binary"> <button (click)="swapCircles()">Swap Directions</button>
+    <div class="clicker" tabindex="1"> ?
+      <div class="info">
+        This button will change the circles so that the depth is reversed.
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="binary"> <button (click)="transparencyToggle()">Transparency On/Off</button>
+    <div class="clicker" tabindex="1"> ?
+      <div class="info">
+        Turn on colors for the inner circles or turn them off.
+      </div>
+    </div>
+  </div>
+-->
+  <div class="binary"> <button (click)="toggleMovement()">Movement On/Off</button>
+    <div class="clicker" tabindex="1"> ?
+      <div class="info">
+        Allow the circles to move.  They will move toward eachother once they reach MaxWidth and move away from eachother once they reach min width.
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="binary"> <button >Reset</button>
+    <div class="clicker" tabindex="1"> ?
+      <div class="info">
+        Reset the circle to default values.
+      </div>
+    </div>
+  </div>
+  -->
+</div>
+</div>
+<div class="eccentric-circles-config" *ngIf=configDisplay>
+  <div class="input-config">
+    <table>
+      <tr>
+        <td>Speed: </td>
+        <td><input type="text" [(ngModel)]="speed" size="3" (input)="inputChange()" /></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            Circles move a particular distance per interval.  The shorter the interval the faster the movement.
+            Shortest possible interval should be 200ms.
+            The longest interval should be no more than 1000ms to avoid apparent freezing of the game.  The game is not actually frozen.
+            instead what happens is if you put in 10000ms that is equivalent to saying update every 10 seconds.  It will take at least 10 seconds
+            to update the page.
+          </div>
+        </div>
+        <td><!--MaxHeight: --></td>
+        <td><!--<input type="text" [(ngModel)]="maxHeight" size="3" (input)="inputChange()" />--></td>
+        <!--<div class="clicker" tabindex="1"> ?
+          <div class="info">
+            Circles may move up and down on level with eachother.  This value defines how far up and down they will go.
+          </div>
+        </div>-->
+        <td></td>
+        <td>
+          Left Circle
+        </td>
+        <td>
+          Right Circle
+        </td>
+      </tr>
+      <tr>
+        <td>MaxWidth: </td>
+        <td><input type="text" [(ngModel)]="maxWidth" size="3" (input)="inputChange()"/></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            Maximum distance the circles will move away from each other.
+          </div>
+        </div>
+        <td>MinWidth: </td>
+        <td><input type="text" [(ngModel)]="minWidth" size="3" (input)="inputChange()"/></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            Closest the circles can get to each other.
+          </div>
+        </div>
+        <td>Color: </td>
+        <td><input type="text" [(ngModel)]="leftColor" size="5" (input)="inputChange()"/></td>
+        <td style="padding-left:5px"><input type="text" [(ngModel)]="rightColor" size="5" (input)="inputChange()"/></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            Inner color of the left circle.  You may use names like red, blue, green, orange, etc.  You may also use hex values such as #FFAA08
+          </div>
+        </div>
+      </tr>
+      <tr>
+        <td>LineWidth: </td>
+        <td><input type="text" [(ngModel)]="lineWidth" size="5" (input)="inputChange()" /></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            Determines the thickness of the circle's lines.
+          </div>
+        </div>
+        <td colspan=3></td>
+        <td>Opacity: </td>
+        <td><input type="text" [(ngModel)]="leftOpacity" size="5" (input)="inputChange()" /></td>
+        <td style="padding-left:5px"><input type="text" [(ngModel)]="rightOpacity" size="5" (input)="inputChange()" /></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            The transparency of the text inside of the the circle.  Values should range between 0 and 1.  EG: 0, 0.3, 0.5, 0.8, 1
+          </div>
+        </div>
+      </tr>
+      <tr>
+        <td colspan=6></td>
+        <td>Text: </td>
+        <td><input type="text" [(ngModel)]="leftText" size="5" (input)="inputChange()" /></td>
+        <td style="padding-left:5px"><input type="text" [(ngModel)]="rightText" size="5" (input)="inputChange()" /></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            The content of the text inside of each circle
+          </div>
+        </div>
+      </tr>
+      <tr>
+        <td colspan=6></td>
+        <td>Text Font Size: </td>
+        <td><input type="text" [(ngModel)]="leftFontSize" size="5" (input)="inputChange()" /></td>
+        <td style="padding-left:5px"><input type="text" [(ngModel)]="rightFontSize" size="5" (input)="inputChange()" /></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            The content of the text inside of each circle
+          </div>
+        </div>
+      </tr>
+      <tr>
+        <td colspan=6></td>
+        <td>Transparency Time: </td>
+        <td><input type="text" [(ngModel)]="leftTransparencyTime" size="5" (input)="inputChange()" /></td>
+        <td style="padding-left:5px"><input type="text" [(ngModel)]="rightTransparencyTime" size="5" (input)="inputChange()" /></td>
+        <div class="clicker" tabindex="1"> ?
+          <div class="info">
+            The content of the text inside of each circle
+          </div>
+        </div>
+      </tr>
+
+    </table>
+  </div>
+</div>
+<div class="text-config" *ngIf=JSONConfigDisplay>
+<textarea ref-textarea [(ngModel)]="circles" cols=40 rows=10 (click)="console()"></textarea>
+</div>
+
+</div>
+<div width="1600" height="800">
+  <canvas id="myCanvas" width="1600" height="800" style="margin-top:20px;border:1px solid #c3c3c3;position: fixed;left: 50%;margin-left: -800px;">
+  Your browser does not support the HTML5 canvas tag.
+  </canvas>
+</div>
