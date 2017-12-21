@@ -73,6 +73,7 @@
           </div>
         </div>-->
         <td></td>
+		<td></td>
         <td>
           Left Circle
         </td>
@@ -100,7 +101,7 @@
         <td style="padding-left:5px"><input type="text" [(ngModel)]="rightColor" size="5" (input)="inputChange()"/></td>
         <div class="clicker" tabindex="1"> ?
           <div class="info">
-            Inner color of the left circle.  You may use names like red, blue, green, orange, etc.  You may also use hex values such as #FFAA08
+            Inner color of the circle.  You may use names like red, blue, green, orange, and other html standard color names.  You may also use hex values such as #FFAA08 
           </div>
         </div>
       </tr>
@@ -140,18 +141,20 @@
         <td style="padding-left:5px"><input type="text" [(ngModel)]="rightFontSize" size="5" (input)="inputChange()" /></td>
         <div class="clicker" tabindex="1"> ?
           <div class="info">
-            The content of the text inside of each circle
+            How large the font in the inner circles appear.
           </div>
         </div>
       </tr>
       <tr>
         <td colspan=6></td>
-        <td>Transparency Time: </td>
+        <td>Non-Transparency Time: </td>
         <td><input type="text" [(ngModel)]="leftTransparencyTime" size="5" (input)="inputChange()" /></td>
         <td style="padding-left:5px"><input type="text" [(ngModel)]="rightTransparencyTime" size="5" (input)="inputChange()" /></td>
         <div class="clicker" tabindex="1"> ?
           <div class="info">
-            The content of the text inside of each circle
+            Transparency is meant to alternate per text field.  This number indicates how long the text should remain fully opaque before becoming transparent again.
+			For example, if you say "1000" that means "stay visible for 1 second, then become transparent.  Once transparent the other text field will remain opaque 
+			for however long it is instructed to remain opaque.
           </div>
         </div>
       </tr>
